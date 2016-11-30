@@ -8,7 +8,10 @@ class TreeNode
     # Values greater than it will be inserted on its right
     def initialize val,left,right
         @value = val
-        @left = left
+        
+            fsdjks djks df
+        
+ 
         @right = right
     end
 end
