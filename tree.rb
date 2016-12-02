@@ -49,7 +49,7 @@ class BinarySearchTree
     end
     
     # This function find and return true if the value is included
-    # the tree other return false
+    # in the tree otherwise it return false
     
     def find(value)
     
