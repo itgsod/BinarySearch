@@ -85,6 +85,25 @@ class BinarySearchTree
         
         return max
     end
+    
+    def findMin
+        node=@root
+        min=node.value
+
+        while nil != node
+            if (min > node.value)
+                min = node.value
+                node = node.left
+               
+            elsif (min <= node.value)
+                node = node.left
+            
+            end
+            
+        end
+        
+        return min
+    end
 
     
     # Inserting a value
@@ -130,9 +149,9 @@ bst.preOrderTraversal
 puts "Post-Order Traversal:"
 bst.postOrderTraversal
 val = 17
-print "Is #{val} in tree?: #{bst.find(val)}"
-puts
-print "Largest value: #{bst.findMax}"
+print "Is #{val} in tree?: #{bst.find(val)}\n"
+print "Largest value: #{bst.findMax}\n"
+print "Smallest value: #{bst.findMin}\n"
 
 =begin
 
