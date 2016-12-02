@@ -6,8 +6,8 @@ class TreeNode
     # The Tree node contains a value, and a pointer to two children - left and right 
     # Values lesser than this node will be inserted on its left
     # Values greater than it will be inserted on its right
-    def initialize val,left,right
-        @value = val
+    def initialize value,left,right
+        @value = value
         @left = left
         @right = right
     end
@@ -47,8 +47,27 @@ class BinarySearchTree
         puts node.value.to_s
         inOrderTraversal(node.right)
     end
+    
+    # This function find and return true if the value is included
+    # the tree other return false
+    
+    def find(value)
+    
+        node=@root
 
-     
+        while nil != node
+            if (value < node.value)
+                node = node.left
+            elsif (value > node.value)
+                node = node.right
+            elsif (value == node.value)
+                return true
+            end
+        end
+        return false
+    end
+
+    
     # Inserting a value
     # When value > current node, go towards the right
     # when value < current node, go towards the left
@@ -89,6 +108,7 @@ puts "Pre-Order Traversal:"
 bst.preOrderTraversal
 puts "Post-Order Traversal:"
 bst.postOrderTraversal
+puts bst.find(17)
 
 =begin
 
