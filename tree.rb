@@ -48,11 +48,10 @@ class BinarySearchTree
         inOrderTraversal(node.right)
     end
     
-    # This function find and return true if the value is included
+    # The following function find and return true if the value is included
     # in the tree otherwise it return false
-    
+ 
     def find(value)
-    
         node=@root
 
         while nil != node
@@ -64,7 +63,27 @@ class BinarySearchTree
                 return true
             end
         end
+        
         return false
+    end
+    
+    def findMax
+        node=@root
+        max=node.value
+
+        while nil != node
+            if (max < node.value)
+                max = node.value
+                node = node.right
+               
+            elsif (max >= node.value)
+                node = node.right
+            
+            end
+            
+        end
+        
+        return max
     end
 
     
@@ -96,11 +115,13 @@ bst = BinarySearchTree.new(10)
 bst.insert(11)
 bst.insert(9)
 bst.insert(5)
+bst.insert(23)
 bst.insert(7)
 bst.insert(18)
 bst.insert(17)
 bst.insert(4)
 bst.insert(19)
+
 # Demonstrating Different Kinds of Traversals
 puts "In-Order Traversal:"
 bst.inOrderTraversal
@@ -108,7 +129,10 @@ puts "Pre-Order Traversal:"
 bst.preOrderTraversal
 puts "Post-Order Traversal:"
 bst.postOrderTraversal
-puts bst.find(17)
+val = 17
+print "Is #{val} in tree?: #{bst.find(val)}"
+puts
+print "Largest value: #{bst.findMax}"
 
 =begin
 
