@@ -6,6 +6,7 @@ class TreeNode
     # The Tree node contains a value, and a pointer to two children - left and right 
     # Values lesser than this node will be inserted on its left
     # Values greater than it will be inserted on its right
+    
     def initialize value,left,right
         @value = value
         @left = left
@@ -13,7 +14,7 @@ class TreeNode
     end
 end
 
-class BinarySearchTree
+class BinaryTree
     
     # Initialize the Root Node
     def initialize val
@@ -52,7 +53,7 @@ class BinarySearchTree
     # in the tree otherwise it return false
  
     def find(value)
-        node=@root
+        node = @root
 
         while nil != node
             if (value < node.value)
@@ -130,7 +131,7 @@ class BinarySearchTree
     end
 end
 
-bst = BinarySearchTree.new(10)
+bst = BinaryTree.new(10)
 bst.insert(11)
 bst.insert(9)
 bst.insert(5)
