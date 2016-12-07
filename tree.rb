@@ -68,43 +68,7 @@ class BinaryTree
         return false
     end
     
-    def findMax
-        node=@root
-        max=node.value
 
-        while nil != node
-            if (max < node.value)
-                max = node.value
-                node = node.right
-               
-            elsif (max >= node.value)
-                node = node.right
-            
-            end
-            
-        end
-        
-        return max
-    end
-    
-    def findMin
-        node=@root
-        min=node.value
-
-        while nil != node
-            if (min > node.value)
-                min = node.value
-                node = node.left
-               
-            elsif (min <= node.value)
-                node = node.left
-            
-            end
-            
-        end
-        
-        return min
-    end
 
     
     # Inserting a value
